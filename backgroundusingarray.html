@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background using Array</title>
+    <style>
+        .container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding: 10px;
+            margin: 20px;
+            background: linear-gradient(135deg, #548d83, #7391a1);
+            border-radius: 10px;
+        }
+        button{
+            border: none;
+            outline: none;
+            padding: 10px;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 5px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Change the background color using a given array.</h1><br><br>
+        <button id="btn">Change the color</button>
+    </div>
+    <script>
+        let body = document.body;
+        let button = document.getElementById("btn");
+        let color = ['red', 'yellow', 'green', 'pink', 'brown', '#999'];
+        let currentIndex = 0;
+        button.addEventListener("click", () => {
+            body.style.backgroundColor = color[currentIndex];
+            console.log(currentIndex);
+            
+
+            currentIndex = (currentIndex + 1) % color.length;
+
+        });
+    </script>
+</body>
+</html>

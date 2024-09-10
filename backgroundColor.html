@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background Color Changer</title>
+</head>
+<body>
+    <button id="btn">Color Changer</button>
+</body>
+
+<script>
+    let body = document.body;
+    let button = document.getElementById("btn");
+    let hex = "ABCEDF0123456789";
+
+    function randomcolor(){
+      let hexColor = "#";
+      for(let i = 0; i<6; i++){
+        hexColor += hex[Math.floor(Math.random() * hex.length)];
+        console.log(hexColor);
+        
+      }
+      return hexColor;
+    }
+
+    button.addEventListener("click", () => {
+        let color = randomcolor();
+        body.style.backgroundColor = color;
+    });
+</script>
+</html>
